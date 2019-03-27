@@ -1,0 +1,27 @@
+<mat-sidenav-container >
+
+ <mat-sidenav-content>
+    <mat-toolbar color="warn" class="inline">
+      <span>{{title}}</span>
+   <div class="right">
+       <form class="example-form">
+           <mat-form-field class="example-full-width">
+               <!--<input #searchInput id="search-input" (input)="search(searchInput.value)" placeholder="TV Show" >-->
+             <!--<input #searchInput id="search-input" placeholder="TV Show" type="text" value="">-->
+               <!--<mat-option *ngFor="let option of shows$ | async" [value]="option.name">
+                 {{option.name}}
+               </mat-option>-->
+             <input matInput placeholder="Favorite food" value="Sushi">
+           </mat-form-field>
+              <!--<button mat-button routerLink="/search/{{searchInput.value}}">Go</button>-->
+         <button mat-button routerLink="search/:q">Go</button>
+        </form>
+    </div>
+    <!-- Add Content Here -->
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>
+

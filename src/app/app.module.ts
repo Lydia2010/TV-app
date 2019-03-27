@@ -1,33 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from "@angular/common/http";
 
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HeaderComponent } from './components/layout/header/header.component';
 
-import { MyNavComponent } from './my-nav/my-nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
+
+import { MyNavComponent } from './views/my-nav/my-nav.component';
+
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+import { SearchComponent } from './views/search/search.component';
+import { SeasonsComponent } from './views/seasons/seasons.component';
+import { ShowItemComponent } from './views/show-item/show-item.component';
+import { ShowListComponent } from './views/show-list/show-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    MyNavComponent
+    MyNavComponent,
+    SearchComponent,
+    SeasonsComponent,
+    routingComponents,
+    ShowItemComponent,
+    ShowListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
