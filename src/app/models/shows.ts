@@ -9,12 +9,17 @@ export class Shows {
 
 
   constructor(args?) {
-    this.id = args.id;
-    this.name = args.name;
-    this.status = args.status;
-    this.premiered = args.premiered;
 
-    //this.image = args.image;
-    this.summary = args.summary;
+    if (args) {
+
+      console.log(args.id);
+      this.id = args.id;
+      this.name = args.name;
+      this.status = args.status;
+      this.premiered = args.premiered;
+
+      //this.image = args.image;
+      this.summary = args.summary;
+    }
   }
 }

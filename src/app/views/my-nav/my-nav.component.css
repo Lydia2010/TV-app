@@ -1,5 +1,5 @@
 mat-sidenav-container, mat-sidenav-content{
-  height: 500px;
+  height: 100px;
 }
 .sidenav .mat-toolbar {
   background: inherit;

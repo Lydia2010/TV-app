@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ShowService} from "../../servises/show.service";
+import {ShowService} from "../../services/show.service";
 import {Shows} from "../../models/shows";
 
 @Component({
@@ -14,9 +14,16 @@ export class ShowListComponent implements OnInit {
   constructor(private _showService: ShowService) { }
 
   getShows(): void {
-    this._showService.getShows().subscribe(shows => {
+    this.shows = [];
+    this._showService.getShows().subscribe(results => {
+      //this.shows = [];
       console.log('got it');
-      console.log(shows);
+      //console.log(shows);
+      results.map((item)=>{
+        const temp = new Shows(item);
+        console.log(item);
+        this.shows.push(temp);
+      })
     });
   }
   ngOnInit() {

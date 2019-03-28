@@ -11,10 +11,10 @@
                <!--<mat-option *ngFor="let option of shows$ | async" [value]="option.name">
                  {{option.name}}
                </mat-option>-->
-             <input matInput placeholder="Favorite food" value="Sushi">
+             <input matInput placeholder="type your favorite show " [(ngModel)]="query" name="Search">
            </mat-form-field>
               <!--<button mat-button routerLink="/search/{{searchInput.value}}">Go</button>-->
-         <button mat-button routerLink="search/:q">Go</button>
+         <button mat-button routerLink="search/{{query}}">Go</button>
         </form>
     </div>
     <!-- Add Content Here -->
@@ -25,3 +25,4 @@
 
 </mat-sidenav-container>
 
+<p>{{query}}</p>
