@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ShowService} from "../../services/show.service";
 import {Shows} from "../../models/shows";
+import {ActivatedRoute} from "@angular/router";
+//import {query} from "@angular/animations";
 
 @Component({
   selector: 'app-show-list',
@@ -10,18 +12,25 @@ import {Shows} from "../../models/shows";
 export class ShowListComponent implements OnInit {
   //public shows = [];
   shows: Shows[];
+  query: string;
+  //private route: ActivatedRoute;
 
-  constructor(private _showService: ShowService) { }
+  constructor(private _showService: ShowService,private route: ActivatedRoute) {
+    //this.query = this.route.snapshot.paramMap.get('query');
+
+    //console.log(this.route.paramMap.get('query'));
+    console.log(this.route.snapshot.params.query);
+  }
 
   getShows(): void {
     this.shows = [];
-    this._showService.getShows().subscribe(results => {
+    this._showService.getShows(this.route.snapshot.params.query).subscribe(results => {
       //this.shows = [];
       console.log('got it');
       //console.log(shows);
       results.map((item)=>{
-        const temp = new Shows(item);
-        console.log(item);
+        const temp = new Shows(item.show);
+        console.log(temp);
         this.shows.push(temp);
       })
     });

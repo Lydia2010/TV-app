@@ -1,7 +1,29 @@
 <h2>Show list</h2>
-<table>
+<!--<table>
 <tr *ngFor="let result of shows">
   <td>{{result.id}}2</td>
   <td>{{result.name}}3</td>
 </tr>
-</table>
+</table>-->
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let result of shows">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{result.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <p *ngIf="result.premiered">{{result.premiered | date}}</p>
+      </mat-panel-description>
+      <mat-panel-description>
+        <p *ngIf="result.status">{{result.status}}</p>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+
+  <img *ngIf="result.image" src={{result.image.medium}} alt="{{result.name}}">
+
+
+  </mat-expansion-panel>
+</mat-accordion>
+

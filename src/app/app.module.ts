@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { MyNavComponent } from './views/my-nav/my-nav.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
@@ -40,7 +41,8 @@ import { ShowListComponent } from './views/show-list/show-list.component';
     MatListModule,
     MatInputModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule
 
   ],
   providers: [],

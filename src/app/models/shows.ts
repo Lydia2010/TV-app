@@ -4,7 +4,7 @@ export class Shows {
   name: string;
   status: string;
   premiered: Date;
-  //image: Image;
+  image: string;
   summary: string;
 
 
@@ -17,8 +17,7 @@ export class Shows {
       this.name = args.name;
       this.status = args.status;
       this.premiered = args.premiered;
-
-      //this.image = args.image;
+      this.image = args.image;
       this.summary = args.summary;
     }
   }
