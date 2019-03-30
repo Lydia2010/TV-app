@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ShowItemComponent} from "./views/show-item/show-item.component";
 import {ShowListComponent} from "./views/show-list/show-list.component";
+import {SeasonsComponent} from "./views/seasons/seasons.component";
+import {MyNavComponent} from "./views/my-nav/my-nav.component";
 
 const routes: Routes = [
-  {path: 'show/:id', component: ShowItemComponent},
+  //{path: '',component: MyNavComponent},
+  {path: 'seasons/:id', component: SeasonsComponent},
   {path: 'search/:query', component: ShowListComponent}
 ];
 
@@ -13,4 +16,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ShowItemComponent,ShowListComponent]
+export const routingComponents = [ShowListComponent,SeasonsComponent]

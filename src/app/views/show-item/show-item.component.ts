@@ -11,8 +11,8 @@ export class ShowItemComponent implements OnInit {
   constructor(private _showService: ShowService) { }
 
   ngOnInit() {
-    this._showService.getShows()
-      .subscribe(data => this.shows = data);
+    // this._showService.getShows()
+    //   .subscribe(data => this.shows = data);
   }
 
 }

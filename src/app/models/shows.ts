@@ -1,3 +1,5 @@
+import {Seasons} from "./seasons";
+
 export class Shows {
   // attribute
   id: number;
@@ -6,19 +8,25 @@ export class Shows {
   premiered: Date;
   image: string;
   summary: string;
+  seasons: Seasons[];
 
 
   constructor(args?) {
 
     if (args) {
-
-      console.log(args.id);
       this.id = args.id;
       this.name = args.name;
       this.status = args.status;
       this.premiered = args.premiered;
       this.image = args.image;
       this.summary = args.summary;
+      this.seasons = args.seasons;
     }
+  }
+  addSeason(season: Seasons) {
+    if (!this.seasons) {
+      this.seasons = [];
+    }
+    this.seasons.push(season);
   }
 }

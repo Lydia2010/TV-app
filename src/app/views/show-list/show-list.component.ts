@@ -7,43 +7,51 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-show-list',
   templateUrl: './show-list.component.html',
-  styleUrls: ['./show-list.component.sass']
+  styleUrls: ['./show-list.component.css']
 })
 export class ShowListComponent implements OnInit {
-  //public shows = [];
   shows: Shows[];
   query: string;
-  //private route: ActivatedRoute;
+
 
   constructor(private _showService: ShowService,private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(pm =>
+      this._showService.getShows(pm.get('query')).subscribe( result=>{
+      this.shows = [];
+      result.map((item)=> {
+        const temp = new Shows(item.show);
+        //console.log(temp);
+        this.shows.push(temp);
+      })
+    }))
+
     //this.query = this.route.snapshot.paramMap.get('query');
 
     //console.log(this.route.paramMap.get('query'));
-    console.log(this.route.snapshot.params.query);
+    //console.log(this.route.snapshot.params.query);
   }
 
-  getShows(): void {
-    this.shows = [];
-    this._showService.getShows(this.route.snapshot.params.query).subscribe(results => {
-      //this.shows = [];
-      console.log('got it');
-      //console.log(shows);
-      results.map((item)=>{
-        const temp = new Shows(item.show);
-        console.log(temp);
-        this.shows.push(temp);
-      })
-    });
-  }
+  // getShows(): void {
+  //   this.shows = [];
+  //   this._showService.getShows(this.route.snapshot.params.query).subscribe(results => {
+  //     //this.shows = [];
+  //     console.log('got it');
+  //     //console.log(shows);
+  //     results.map((item)=>{
+  //       const temp = new Shows(item.show);
+  //       console.log(temp);
+  //       this.shows.push(temp);
+  //     })
+  //   });
+
   ngOnInit() {
-    this.getShows()
   }
 
-
+}
   // ngOnInit() {
   //   this._showService.getShows()
   //     .subscribe(data => this.shows = data);
 
 
-}
+
 
