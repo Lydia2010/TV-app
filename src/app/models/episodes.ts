@@ -1,25 +1,21 @@
-export class Seasons{
+export class Episodes{
   id: number;
   url: string;
   name: string;
-  summary: string;
-  episodeOrder: number;
-  number: number;
-  episode: number;
+  date: Data;
+
 
 
 
 
   constructor(args?) {
-    console.log(8888888);
+    console.log(55555);
     if (args) {
       this.id = args.id;
       this.url = args.url;
       this.name = args.name;
-      this.episodeOrder = args.episodeOrder;
-      this.number = args.number;
-      this.summary = args.summary;
-      this.episode = args.episode;
+      this.data = args.data;
+
 
     }
   }
