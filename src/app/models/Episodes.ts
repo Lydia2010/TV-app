@@ -1,5 +1,6 @@
 export class Episodes{
   id: number;
+  number: number;
   url: string;
   name: string;
   aired: string;
@@ -12,9 +13,10 @@ export class Episodes{
     if (args) {
       this.id = args.id;
       console.log("id episod " + args.id);
+      this.number = args.number;
       this.url = args.url;
       this.name = args.name;
-      this.aired = args.aired;
+      this.aired = args.airdate;
 
 
     }

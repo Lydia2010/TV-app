@@ -14,22 +14,8 @@ export class EpisodeComponent implements OnInit {
   episodes: Episodes[];
   displayedColumns: string[] = ['number', 'name', 'aired'];
 
-  // constructor(private _showService: ShowService, private route: ActivatedRoute) {
-  //   //   console.log("Episodes are here: " + this.id);
-  //   //   this.route.paramMap.subscribe(pm =>
-  //   //     this._showService.getEpisode(pm.get('id')).subscribe(result => {
-  //   //       this.episodes = [];
-  //   //       console.log(pm.get('id') + ' MY SEASON ID');
-  //   //       result.map((item) => {
-  //   //         const temp = new Episodes(item);
-  //   //         this.episodes.push(temp);
-  //   //       })
-  //   //     }))
-  //   // }
-
   constructor(private _showService: ShowService) {
   }
-
   ngOnInit() {
     this._showService.getEpisode(this.id).subscribe(result => {
       this.episodes = [];

@@ -6,7 +6,7 @@ export class Shows {
   name: string;
   status: string;
   premiered: Date;
-  image: string;
+  image: { medium: string };
   summary: string;
   seasons: Seasons[];
   nextEpisode: string;

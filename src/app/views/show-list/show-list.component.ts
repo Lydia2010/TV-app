@@ -16,18 +16,39 @@ export class ShowListComponent implements OnInit {
   constructor(private _showService: ShowService,private route: ActivatedRoute) {
     this.route.paramMap.subscribe(pm =>
       this._showService.getShows(pm.get('query')).subscribe( result=>{
-      this.shows = [];
-      result.map((item)=> {
-        const temp = new Shows(item.show);
-        this.shows.push(temp);
-      })
-    }))
+        this.shows = [];
+        result.map((item)=> {
+          let temp = new Shows(item.show);
+          item.show.nextEpisode = item.show._links.self.href;
+          console.table(item.show.nextEpisode);
+          console.table(item.show._links.self.href);
+          console.log(item);
+          this.shows.push(temp);
+        })
+      }))
 
     //this.query = this.route.snapshot.paramMap.get('query');
 
     //console.log(this.route.paramMap.get('query'));
     //console.log(this.route.snapshot.params.query);
   }
+
+  //
+  //   // constructor(private _showService: ShowService,private route: ActivatedRoute) {
+  //   //   this.route.paramMap.subscribe(pm =>
+  //   //     this._showService.getShows(pm.get('query')).subscribe( result=>{
+  //   //     this.shows = [];
+  //   //     result.map((item)=> {
+  //   //       const temp = new Shows(item.show);
+  //   //       this.shows.push(temp);
+  //   //     })
+  //   //   }))
+  //   //
+  //   //   //this.query = this.route.snapshot.paramMap.get('query');
+  //   //
+  //   //   //console.log(this.route.paramMap.get('query'));
+  //   //   //console.log(this.route.snapshot.params.query);
+  //   // }
 
   // getShows(): void {
   //   this.shows = [];
