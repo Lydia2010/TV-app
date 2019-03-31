@@ -10,8 +10,9 @@ import {Shows} from "../models/shows";
 export class ShowService {
 
   private shows_url: string = 'http://api.tvmaze.com/search/shows?q=';
-  //private season_url: string = 'http://api.tvmaze.com/shows/:id/seasons';
   private seasons_url: string = 'http://api.tvmaze.com/shows/';
+  private episodes_url: string = 'http://api.tvmaze.com/seasons/';
+
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,10 @@ export class ShowService {
   getSeason(id):Observable<any[]>{
     console.log(this.seasons_url+id+'/seasons');
     return this.http.get<any[]>(this.seasons_url+id+'/seasons');
+  }
 
+  getEpisode(id: number): Observable<any[]>{
+    return this.http.get<[any]>(this.episodes_url+id+'/episodes' )
   }
 }
 

@@ -2,7 +2,7 @@ export class Episodes{
   id: number;
   url: string;
   name: string;
-  date: Data;
+  airdate: Date;
 
 
 
@@ -14,7 +14,7 @@ export class Episodes{
       this.id = args.id;
       this.url = args.url;
       this.name = args.name;
-      this.data = args.data;
+      this.airdate = args.airdate;
 
 
     }
