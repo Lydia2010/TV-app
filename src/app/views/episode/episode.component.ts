@@ -12,7 +12,7 @@ import {Seasons} from "../../models/seasons";
 export class EpisodeComponent implements OnInit {
   @Input() id: string;
   episodes: Episodes[];
-  displayedColumns: string[] = ['number', 'name', 'aired'];
+  displayedColumns: string[] = ['number', 'name', 'airdate'];
 
   constructor(private _showService: ShowService) {
   }
