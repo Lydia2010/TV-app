@@ -9,7 +9,7 @@ import { MyNavComponent } from './views/my-nav/my-nav.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
-import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 import { SeasonsComponent } from './views/seasons/seasons.component';
 import { ShowItemComponent } from './views/show-item/show-item.component';
 import { ShowListComponent } from './views/show-list/show-list.component';
@@ -39,7 +39,7 @@ import { EpisodeComponent } from './views/episode/episode.component';
     HttpClientModule,
     FormsModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTableModule
 
 
   ],
