@@ -15,7 +15,7 @@ export class Shows {
   previousEpisodeUrl: string;
   nextEpisode: Episodes;
   previousEpisode: Episodes;
-  srv: ShowService;
+
 
 
   constructor (args?) {
@@ -29,19 +29,24 @@ export class Shows {
       this.summary = args.summary;
       this.seasons = args.seasons;
       this.previousEpisodeUrl = (args._links.previousepisode) ? args._links.previousepisode.href : null;
+      this.nextEpisodeUrl = (args._links.nextepisode) ? args._links.nextepisode.href : null;
 
     }
   }
 
-  addSeason(season: Seasons) {
-    if (!this.seasons) {
-      this.seasons = [];
-    }
-    this.seasons.push(season);
-  }
+  // addSeason(season: Seasons) {
+  //   if (!this.seasons) {
+  //     this.seasons = [];
+  //   }
+  //   this.seasons.push(season);
+  // }
+  //
 
   addPrevEpisode(ep: Episodes) {
     this.previousEpisode = ep;
+  }
+  addNextEpisode(nextEp: Episodes){
+    this.nextEpisode = nextEp;
   }
 
 }
