@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ShowService} from "../../services/show.service";
 import {Shows} from "../../models/shows";
 import {ActivatedRoute} from "@angular/router";
+import {Episodes} from "../../models/Episodes";
 //import {query} from "@angular/animations";
 
 @Component({
@@ -43,6 +44,18 @@ export class ShowListComponent implements OnInit {
           this.shows = [];
           result.map((item) => {
             const temp = new Shows(item.show);
+            let prev_url = temp.previousEpisodeUrl;
+            console.log(prev_url);
+            let jsonReceived = this._showService.getJSONforEpCreation(prev_url).subscribe(result1 => {
+              console.log(result1.name);
+              let epObj = new Episodes(result1);
+              console.table({epObj});
+              temp.addPrevEpisode(epObj);
+              console.table('Prev ep name from show.ep.name: ', temp.previousEpisode.name);
+            });
+
+
+
 
             this.shows.push(temp);
           })

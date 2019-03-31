@@ -41,6 +41,11 @@ export class ShowService {
     return this.http.get( url);
   }
 
+  getJSONforEpCreation(passedUrl: string): Observable<any>{
+    console.log('Passed Ep URL: ', passedUrl);
+    return this.http.get<[any]>(passedUrl);
+
+  }
 
 }
 
