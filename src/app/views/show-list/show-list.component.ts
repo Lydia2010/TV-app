@@ -13,14 +13,12 @@ export class ShowListComponent implements OnInit {
   shows: Shows[];
   query: string;
 
-
   constructor(private _showService: ShowService,private route: ActivatedRoute) {
     this.route.paramMap.subscribe(pm =>
       this._showService.getShows(pm.get('query')).subscribe( result=>{
       this.shows = [];
       result.map((item)=> {
         const temp = new Shows(item.show);
-        //console.log(temp);
         this.shows.push(temp);
       })
     }))

@@ -11,9 +11,9 @@ export class Seasons{
 
 
   constructor(args?) {
-    console.log(8888888);
     if (args) {
       this.id = args.id;
+      console.log("id seosons " + args.id);
       this.url = args.url;
       this.name = args.name;
       this.episodeOrder = args.episodeOrder;

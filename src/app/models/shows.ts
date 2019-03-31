@@ -9,6 +9,10 @@ export class Shows {
   image: string;
   summary: string;
   seasons: Seasons[];
+  nextEpisode: string;
+  previousEpisode: string;
+  links: any;
+
 
 
   constructor(args?) {
@@ -21,6 +25,9 @@ export class Shows {
       this.image = args.image;
       this.summary = args.summary;
       this.seasons = args.seasons;
+      this.nextEpisode = args.nextEpisode;
+      this.previousEpisode = args.previousEpisode;
+      this.links = args._links;
     }
   }
   addSeason(season: Seasons) {

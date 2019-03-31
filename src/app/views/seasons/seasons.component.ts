@@ -14,7 +14,6 @@ export class SeasonsComponent implements OnInit {
   seasons: Seasons[];
 
   constructor(private _showService: ShowService, private route: ActivatedRoute) {
-    console.log (99999);
      this.route.paramMap.subscribe(pm =>
        this._showService.getSeason(pm.get('id')).subscribe(result => {
         this.seasons = [];

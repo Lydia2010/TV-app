@@ -29,8 +29,17 @@ export class ShowService {
     return this.http.get<any[]>(this.seasons_url+id+'/seasons');
   }
 
-  getEpisode(id: number): Observable<any[]>{
-    return this.http.get<[any]>(this.episodes_url+id+'/episodes' )
+  getEpisode(id: string): Observable<any[]>{
+    console.log(this.episodes_url+id+'/episodes');
+    return this.http.get<[any]>(this.episodes_url+id+'/episodes' );
+
   }
+
+  getNextPreviousEpisode(url: string): Observable<any[]>{
+    console.log("URL INPUT: " + url);
+    return this.http.get<[any]>(url);
+  }
+
+
 }
 
