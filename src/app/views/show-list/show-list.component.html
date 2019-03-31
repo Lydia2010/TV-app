@@ -23,7 +23,7 @@
         <img *ngIf="result.image" src={{result.image.medium}} alt="{{result.name}}">
         <span [innerHTML]="result.summary"></span>
         <hr>
-        <p>Previous Episode: {{result.previousEpisode.name}}</p>
+        <p *ngIf="result.previousEpisode ">Previous Episode: {{result.previousEpisode.name}}</p>
 
 
 
