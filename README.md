@@ -21,7 +21,7 @@ Here are some steps that used to implementation process:
 
 1. Plan you layout and create 4 components:
    my-nav
-   show-list
+   shows-list
    seasons
    episodes
    
@@ -33,7 +33,11 @@ Here are some steps that used to implementation process:
 4. Create app.module which contains all necessary imports.
 
 
+Main Pages:
 
+Home - where the search bar is located
+Shows-List Component - rendered after search. The List of shows. Each show contains details.  
+Episode Page Component - season-by-season breakdown of a specific show. When navigate on a specific season causes the episodes from that season to appear.
 
 
 

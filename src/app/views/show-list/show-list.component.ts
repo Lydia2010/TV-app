@@ -11,10 +11,12 @@ import {Episodes} from "../../models/Episodes";
   styleUrls: ['./show-list.component.css']
 })
 export class ShowListComponent implements OnInit {
+  // create properties, one of them for search query that user types in, and a shows array to be returned.
   shows: Shows[];
   query: string;
   episodeName: string;
 
+  // Create observable on getShows method
   // invoke service to get shows using parameter in search field and populate
   // shows array to display in html page of this component
     constructor(private _showService: ShowService,private route: ActivatedRoute) {

@@ -18,6 +18,7 @@ export class EpisodeComponent implements OnInit {
   constructor(private _showService: ShowService) {
   }
   // invoke service to get Episodes and populate episodes array to display in html page of this component
+  //using the id of the season, get information on each episode
   ngOnInit() {
     this._showService.getEpisode(this.id).subscribe(result => {
       this.episodes = [];

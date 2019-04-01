@@ -1,15 +1,13 @@
-
-
 <h2>Show list</h2>
 
 <mat-accordion>
-
 <!--ngFor loop to go throw the shows-->
   <mat-expansion-panel *ngFor="let result of shows">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{result.name}}
       </mat-panel-title>
+      <!--Display premiere date, status, previous and next episode each show (where available)-->
       <mat-panel-description>
         <p *ngIf="result.premiered">Premiered: {{result.premiered | date}}</p>
       </mat-panel-description>
@@ -18,6 +16,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <div class="container">
+      <!--ngIf take a image if it exists-->
         <img *ngIf="result.image" src={{result.image.medium}} alt="{{result.name}}">
         <span [innerHTML]="result.summary"></span>
         <hr>

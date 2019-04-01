@@ -31,10 +31,11 @@ export class Shows {
 
     }
   }
-
+  //to set previous episode
   addPrevEpisode(ep: Episodes) {
     this.previousEpisode = ep;
   }
+  //to set next episode
   addNextEpisode(nextEp: Episodes){
     this.nextEpisode = nextEp;
   }

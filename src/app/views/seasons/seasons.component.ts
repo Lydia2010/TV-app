@@ -11,8 +11,9 @@ import {Seasons} from "../../models/seasons";
   styleUrls: ['./seasons.component.sass']
 })
 export class SeasonsComponent implements OnInit {
-
+// Create property,  which  is a an array of seasons which will be populated.
   seasons: Seasons[];
+
   // invoke service to get seasons and populate seasons array to display in html page of this component
   constructor(private _showService: ShowService, private route: ActivatedRoute) {
      this.route.paramMap.subscribe(pm =>
