@@ -15,25 +15,6 @@ export class ShowListComponent implements OnInit {
   query: string;
   episodeName: string;
 
-  // constructor(private _showService: ShowService,private route: ActivatedRoute) {
-  //   this.route.paramMap.subscribe(pm =>
-  //     this._showService.getShows(pm.get('query')).subscribe( result=>{
-  //       this.shows = [];
-  //       result.map((item)=> {
-  //         let temp = new Shows(item.show);
-  //         console.log(this._showService.getNextPreviousEpisode(temp.previousEpisode));
-  //         item.show.nextEpisode = item.show._links.self.href;
-  //         //console.table(item.show.nextEpisode);
-  //         console.table(item.show._links.self.href);
-  //         //console.log(item);
-  //         this.shows.push(temp);
-  //         this._showService.getNextPreviousEpisode('http://api.tvmaze.com/episodes/1610172')
-  //           .subscribe(result1 =>{
-  //             this.episodName = result1.name;
-  //           })
-  //
-  //       })
-  //     }))
 
 
 
@@ -66,7 +47,15 @@ export class ShowListComponent implements OnInit {
           );
         }
 
-        if(show.previousEpisodeUrl) {
+        if(show.previousEpisodeUrl){
+          this.shows.map( show => {
+            if(show.previousEpisodeUrl) {
+             this._showService.getJSONforEpCreation(show.previousEpisodeUrl).subscribe(
+                res1 => show.addPrevEpisode(new Episodes(res1))
+             );
+            }
+          })
+
 
         }
       });

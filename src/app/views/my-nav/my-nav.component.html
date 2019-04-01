@@ -6,14 +6,10 @@
    <div class="right">
        <form class="example-form">
            <mat-form-field class="example-full-width">
-               <!--<input #searchInput id="search-input" (input)="search(searchInput.value)" placeholder="TV Show" >-->
-             <!--<input #searchInput id="search-input" placeholder="TV Show" type="text" value="">-->
-               <!--<mat-option *ngFor="let option of shows$ | async" [value]="option.name">
-                 {{option.name}}
-               </mat-option>-->
+
              <input matInput placeholder="type your favorite show " [(ngModel)]="query" name="Search">
            </mat-form-field>
-              <!--<button mat-button routerLink="/search/{{searchInput.value}}">Go</button>-->
+
          <button mat-button routerLink="search/{{query}}">Go</button>
         </form>
     </div>

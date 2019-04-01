@@ -11,7 +11,6 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { SeasonsComponent } from './views/seasons/seasons.component';
-import { ShowItemComponent } from './views/show-item/show-item.component';
 import { ShowListComponent } from './views/show-list/show-list.component';
 import { EpisodeComponent } from './views/episode/episode.component';
 
@@ -22,7 +21,6 @@ import { EpisodeComponent } from './views/episode/episode.component';
     MyNavComponent,
     SeasonsComponent,
     routingComponents,
-    ShowItemComponent,
     ShowListComponent,
     EpisodeComponent
   ],

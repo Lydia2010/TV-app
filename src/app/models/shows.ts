@@ -1,6 +1,6 @@
 import {Seasons} from "./seasons";
 import {Episodes} from "./Episodes";
-import {ShowService} from "../services/show.service";
+
 
 export class Shows {
   // attribute
@@ -34,13 +34,7 @@ export class Shows {
     }
   }
 
-  // addSeason(season: Seasons) {
-  //   if (!this.seasons) {
-  //     this.seasons = [];
-  //   }
-  //   this.seasons.push(season);
-  // }
-  //
+
 
   addPrevEpisode(ep: Episodes) {
     this.previousEpisode = ep;

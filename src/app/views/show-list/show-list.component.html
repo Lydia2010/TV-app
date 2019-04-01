@@ -18,7 +18,6 @@
         <p *ngIf="result.status">Status: {{result.status}}</p>
       </mat-panel-description>
     </mat-expansion-panel-header>
-      <div class="flex-container">
 
         <img *ngIf="result.image" src={{result.image.medium}} alt="{{result.name}}">
         <span [innerHTML]="result.summary"></span>
@@ -28,7 +27,7 @@
 
 
 
-    </div>
+
         <button mat-raised-button color="accent" routerLink="/seasons/{{result.id}}">Details</button>
 
   </mat-expansion-panel>

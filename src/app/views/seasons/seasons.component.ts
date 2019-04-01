@@ -25,18 +25,12 @@ export class SeasonsComponent implements OnInit {
          })
       }))
 
-      //   this.shows = [];
-      //   this._showService.getShows(this.route.snapshot.params.query).subscribe(results => {
-      //     //this.shows = [];
-      //     console.log('got it');
-  }
-  getSeason(): void {
-    console.log('got it');
 
   }
+
 
     ngOnInit() {
-      console.log (9999900000000);
+
     }
 
   }
