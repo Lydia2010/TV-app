@@ -4,11 +4,19 @@ mat-panel-title {
 mat-panel-description {
   width: 30%;
  }
-
-
-.flex-container {
-  display: flex;
+.container {
+      display:block;
+}
+span {
+  padding: 5px;
+}
+img {
   float: left;
-  text-align: center;
+  margin: 15px;
+}
+
+button {
+  margin-top: 150px;
+  float: right;
 
 }

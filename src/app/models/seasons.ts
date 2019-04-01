@@ -7,13 +7,9 @@ export class Seasons{
   number: number;
   episode: number;
 
-
-
-
   constructor(args?) {
     if (args) {
       this.id = args.id;
-      console.log("id seosons " + args.id);
       this.url = args.url;
       this.name = args.name;
       this.episodeOrder = args.episodeOrder;

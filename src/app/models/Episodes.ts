@@ -1,13 +1,10 @@
+
 export class Episodes{
   id: number;
   number: number;
   url: string;
   name: string;
   airdate: string;
-
-
-
-
 
   constructor(args?) {
     if (args) {
@@ -16,7 +13,6 @@ export class Episodes{
       this.url = args.url;
       this.name = args.name;
       this.airdate = args.airdate;
-      // console.log("id episode " + args.id);
 
     }
   }

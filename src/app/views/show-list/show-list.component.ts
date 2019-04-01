@@ -15,10 +15,8 @@ export class ShowListComponent implements OnInit {
   query: string;
   episodeName: string;
 
-
-
-
-
+  // invoke service to get shows using parameter in search field and populate
+  // shows array to display in html page of this component
     constructor(private _showService: ShowService,private route: ActivatedRoute) {
       this.route.paramMap.subscribe(pm =>
         this._showService.getShows(pm.get('query')).subscribe(result => {
@@ -32,21 +30,21 @@ export class ShowListComponent implements OnInit {
     }
 
 
-
-
-
   ngOnInit() {
   }
 
+// invoke service to get Previous Episode name and Next Episode name, using URL from Shows service
+// from field previousEpisode and nextEpisode accordingly.
 
   getRelatedEpisodes(): void {
+      // get previous episode  name
       this.shows.map(show => {
         if(show.nextEpisodeUrl) {
           this._showService.getJSONforEpCreation(show.nextEpisodeUrl).subscribe(
             res => show.addNextEpisode(new Episodes(res))
           );
         }
-
+          // get next episode  name
         if(show.previousEpisodeUrl){
           this.shows.map( show => {
             if(show.previousEpisodeUrl) {
@@ -54,11 +52,13 @@ export class ShowListComponent implements OnInit {
                 res1 => show.addPrevEpisode(new Episodes(res1))
              );
             }
-          })
+          }
+          )
 
 
         }
-      });
+      }
+      );
   }
 }
 

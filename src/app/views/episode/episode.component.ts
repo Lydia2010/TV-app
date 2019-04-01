@@ -1,3 +1,4 @@
+// Episode component.
 import { Component, Input, OnInit } from '@angular/core';
 import {Episodes} from "../../models/Episodes";
 import {ShowService} from "../../services/show.service";
@@ -16,6 +17,7 @@ export class EpisodeComponent implements OnInit {
 
   constructor(private _showService: ShowService) {
   }
+  // invoke service to get Episodes and populate episodes array to display in html page of this component
   ngOnInit() {
     this._showService.getEpisode(this.id).subscribe(result => {
       this.episodes = [];

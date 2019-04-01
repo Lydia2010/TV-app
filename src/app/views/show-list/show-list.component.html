@@ -1,11 +1,10 @@
+
+
 <h2>Show list</h2>
-<!--<table>
-<tr *ngFor="let result of shows">
-  <td>{{result.id}}2</td>
-  <td>{{result.name}}3</td>
-</tr>
-</table>-->
+
 <mat-accordion>
+
+<!--ngFor loop to go throw the shows-->
   <mat-expansion-panel *ngFor="let result of shows">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -18,18 +17,14 @@
         <p *ngIf="result.status">Status: {{result.status}}</p>
       </mat-panel-description>
     </mat-expansion-panel-header>
-
+    <div class="container">
         <img *ngIf="result.image" src={{result.image.medium}} alt="{{result.name}}">
         <span [innerHTML]="result.summary"></span>
         <hr>
         <p *ngIf="result.previousEpisode ">Previous Episode: {{result.previousEpisode.name}}</p>
         <p *ngIf="result.nextEpisode ">Next Episode: {{result.nextEpisode.name}}</p>
-
-
-
-
-        <button mat-raised-button color="accent" routerLink="/seasons/{{result.id}}">Details</button>
-
+        <button mat-raised-button color="warn" routerLink="/seasons/{{result.id}}">Details</button>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
 

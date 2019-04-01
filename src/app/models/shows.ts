@@ -16,8 +16,6 @@ export class Shows {
   nextEpisode: Episodes;
   previousEpisode: Episodes;
 
-
-
   constructor (args?) {
 
     if (args) {
@@ -34,13 +32,10 @@ export class Shows {
     }
   }
 
-
-
   addPrevEpisode(ep: Episodes) {
     this.previousEpisode = ep;
   }
   addNextEpisode(nextEp: Episodes){
     this.nextEpisode = nextEp;
   }
-
 }
