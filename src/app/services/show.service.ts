@@ -9,7 +9,7 @@ import {Shows} from "../models/shows";
 })
 export class ShowService {
 
-  private baseUrl = 'http://api.tvmaze.com/';
+  private baseUrl = 'https://api.tvmaze.com/';
 
 
   constructor(private http: HttpClient) { }
