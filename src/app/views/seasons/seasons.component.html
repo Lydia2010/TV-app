@@ -1,3 +1,19 @@
-<p>
-  seasons works!
-</p>
+<mat-accordion>
+  <!--ngFor to go throw the seasons-->
+  <mat-expansion-panel *ngFor="let result of seasons" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Season: {{result.number}}
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <!--to navigate episode-component-->
+      <app-episode [id]="result.id"></app-episode>
+      <!--<app-episode routerLink="/seasons/{{result.id}}"></app-episode>-->
+    </ng-template>
+
+  </mat-expansion-panel>
+
+</mat-accordion>

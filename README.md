@@ -1,27 +1,49 @@
-# TvApp
+TV-App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+This project uses Angular version 7, type script
 
-## Development server
+Purpose
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+An app built in Angular that allows the user to search for a show, select a show,
+and see the episodes list sorted by seasons. This project use MVC model.
 
-## Code scaffolding
+API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+TV Maze
 
-## Build
+Style
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Angular Material
 
-## Running unit tests
+How to build an App:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Here are some steps that used to implementation process:
 
-## Running end-to-end tests
+1. Plan you layout and create 4 components:
+   my-nav
+   shows-list
+   seasons
+   episodes
+   
+2. Create service file to invoke backend services. Each service from the file will be called 
+   from within appropriate component.
+ 
+3. Create app-routing-module.ts file to set all routes.  
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4. Create app.module which contains all necessary imports.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Main Pages:
+
+Home - where the search bar is located
+Shows-List Component - rendered after search. The List of shows. Each show contains details.  
+Episode Page Component - season-by-season breakdown of a specific show. When navigate on a specific season causes the episodes from that season to appear.
+
+
+
+  
+   
+   
+
+
+

@@ -1,4 +1,35 @@
 <h2>Show list</h2>
-<ul *ngFor="let result of shows">
-  <li>{{result.name}}</li>
-</ul>
+
+<mat-accordion>
+<!--ngFor loop to go throw the shows-->
+  <mat-expansion-panel *ngFor="let result of shows">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{result.name}}
+      </mat-panel-title>
+      <!--Display premiere date, status, previous and next episode each show (where available)-->
+      <mat-panel-description>
+        <p *ngIf="result.premiered">Premiered: {{result.premiered | date}}</p>
+      </mat-panel-description>
+      <mat-panel-description>
+        <p *ngIf="result.status">Status: {{result.status}}</p>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="container">
+      <!--ngIf take a image if it exists-->
+        <img *ngIf="result.image" src={{result.image.medium}} alt="{{result.name}}">
+        <span [innerHTML]="result.summary"></span>
+        <hr>
+        <p *ngIf="result.previousEpisode ">Previous Episode: {{result.previousEpisode.name}}</p>
+        <p *ngIf="result.nextEpisode ">Next Episode: {{result.nextEpisode.name}}</p>
+        <button mat-raised-button color="warn" routerLink="/seasons/{{result.id}}">Details</button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+
+  <!--<a [href]="show.officialSite" mat-raised-button color="primary" target="_blank">Visit site</a>-->
+
+
+

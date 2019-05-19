@@ -1,0 +1,22 @@
+mat-panel-title {
+  width: 40%;
+}
+mat-panel-description {
+  width: 30%;
+ }
+.container {
+      display:block;
+}
+span {
+  padding: 5px;
+}
+img {
+  float: left;
+  margin: 15px;
+}
+
+button {
+  margin-top: 150px;
+  float: right;
+
+}
